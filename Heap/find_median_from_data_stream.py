@@ -49,9 +49,10 @@ class MedianFinder:
         self.h1 = []
         self.h2 =[]
 
-    def addNum(self, num: int) -> None:
+    def addNum(self, num: int) -> None:  
         heapq.heappush(self.h2 , num)
         heapq.heappush(self.h1 ,  - 1 * (heapq.heappop(self.h2)))
+        
         if (len(self.h2)) < (len(self.h1)):
             heapq.heappush(self.h2 , -1 * (self.h1[0]))
             heapq.heappop(self.h1)
