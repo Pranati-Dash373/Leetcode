@@ -27,7 +27,7 @@ The input is generated such that a majority element will exist in the array.
 '''
 
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
+    def majorityElement(self, nums: list[int]) -> int:
         element = None
         count = 0
         for i in nums:
