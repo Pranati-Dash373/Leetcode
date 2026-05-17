@@ -27,17 +27,13 @@ The input is generated such that a majority element will exist in the array.
 '''
 
 class Solution:
-    def majorityElement(self, nums: list[int]) -> int:
-        d = {}
-        for i  in nums :
-            if(i not in d):
-                d[i] = 1
-            else:
-                d[i] = d[i] + 1
-        max = 0
-        ans = 0
-        for i in d.keys():
-            if (d[i] > max):
-                max = d[i]
-                ans = i 
-        return ans
+    def majorityElement(self, nums: List[int]) -> int:
+        element = None
+        count = 0
+        for i in nums:
+            if count == 0:
+                element = i
+            elif element != i:
+                count =count - 2
+            count = count + 1
+        return element
